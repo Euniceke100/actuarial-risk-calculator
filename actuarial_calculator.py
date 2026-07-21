@@ -15,15 +15,17 @@ def annuity_value(payment, rate, years):
 
 print("Actuarial Risk Calculator")
 
-investment = 10000
-interest_rate = 0.05
-period = 10
+investment = float(input("Enter investment amount: "))
+interest_rate = float(input("Enter annual interest rate (example 0.05): "))
+years = int(input("Enter number of years: "))
 
 print("\nFuture Value:")
-print(future_value(investment, interest_rate, period))
+print(future_value(investment, interest_rate, years))
 
 print("\nPresent Value:")
-print(present_value(investment, interest_rate, period))
+print(present_value(investment, interest_rate, years))
+
+payment = float(input("\nEnter yearly payment for annuity: "))
 
 print("\nAnnuity Value:")
-print(annuity_value(1000, interest_rate, period))
+print(annuity_value(payment, interest_rate, years))
