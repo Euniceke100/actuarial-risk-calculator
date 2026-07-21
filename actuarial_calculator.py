@@ -13,17 +13,30 @@ def annuity_value(payment, rate, years):
     return payment * (((1 + rate) ** years - 1) / rate)
 
 
-print("Actuarial Risk Calculator")
+print("ACTUARIAL RISK CALCULATOR")
+print("-------------------------")
 
-investment = 10000
-interest_rate = 0.05
-period = 10
+print("1. Future Value")
+print("2. Present Value")
+print("3. Annuity Value")
 
-print("\nFuture Value:")
-print(future_value(investment, interest_rate, period))
+choice = input("Choose calculation (1/2/3): ")
 
-print("\nPresent Value:")
-print(present_value(investment, interest_rate, period))
+amount = float(input("Enter amount: "))
+rate = float(input("Enter interest rate (example 0.05): "))
+years = int(input("Enter number of years: "))
 
-print("\nAnnuity Value:")
-print(annuity_value(1000, interest_rate, period))
+if choice == "1":
+    result = future_value(amount, rate, years)
+    print("Future Value:", round(result, 2))
+
+elif choice == "2":
+    result = present_value(amount, rate, years)
+    print("Present Value:", round(result, 2))
+
+elif choice == "3":
+    result = annuity_value(amount, rate, years)
+    print("Annuity Value:", round(result, 2))
+
+else:
+    print("Invalid choice")
